@@ -1,6 +1,6 @@
 {
 	"files": {
-		"ignore": ["src/pages/", "test-results", "playwright-report", "build"]
+		"ignore": ["public/pages/", "test-results", "playwright-report", "build", "src/types.ts"]
 	},
 	"formatter": {
 		"enabled": true,

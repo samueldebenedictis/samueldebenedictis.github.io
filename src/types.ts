@@ -6,8 +6,9 @@ export type TitleProps = {
 
 export type GalleryProps = {
 	items: {
-		img: string;
 		title: string;
+		img: any;
+		link: any;
 	}[];
 };
 
