@@ -1,25 +1,20 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import Container from "@mui/material/Container";
+import Title from "./components/Title";
+import Bottom from "./components/Bottom";
+import Gallery from "./components/Gallery";
+import { dependenciesData, itemsData } from "./data";
+
+const title = "SAM";
+const subtitle = "Sequential Access Memory";
+const text: string[] = [];
 
 function App() {
 	return (
-		<div className="App">
-			<header className="App-header">
-				<img src={logo} className="App-logo" alt="logo" />
-				<p>
-					Edit <code>src/App.tsx</code> and save to reload.
-				</p>
-				<a
-					className="App-link"
-					href="https://reactjs.org"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					Learn React
-				</a>
-			</header>
-		</div>
+		<Container maxWidth="xl">
+			<Title {...{ title: title, subtitle: subtitle, text: text }} />
+			<Gallery {...{ items: itemsData.items }} />
+			<Bottom {...{ items: dependenciesData.items }} />
+		</Container>
 	);
 }
 
