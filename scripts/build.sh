@@ -1,0 +1,1 @@
+npx canvas-sketch sketches/$1.js --output=output/$1 --build --dir ../src/pages/$1/
