@@ -1,5 +1,5 @@
-APP_DIR := /home/sdebenedictis/Documenti/Progetti/sdb-app/
-SKETCHES_DIR := sketches
+include .env
+export
 
 format:
 	npm run format
@@ -10,4 +10,21 @@ lint:
 format-lint: format lint
 
 build-sketch:
-	cd ${SKETCHES_DIR} && ${APP_DIR}/scripts/build.sh ${ID}
+	npx canvas-sketch ${SKETCH_PATH}/${SKETCH_NAME}.js --build --dir ./public/pages/${SKETCH_NAME}/
+
+_build-covers-and-index:
+	npm run test-e2e
+
+build-covers-and-index: _build-covers-and-index format-lint
+
+install:
+	npm install
+
+run:
+	npm run start
+
+build-app:
+	npm run build
+
+deploy:
+	npm run deploy
