@@ -1,6 +1,9 @@
 include .env
 export
 
+install:
+	npm install
+
 format:
 	npm run format
 
@@ -12,19 +15,18 @@ format-lint: format lint
 build-sketch:
 	npx canvas-sketch ${SKETCH_PATH}/${SKETCH_NAME}.js --build --dir ./public/pages/${SKETCH_NAME}/
 
-_build-covers-and-index:
+.build-data-index:
 	npm run test-e2e
 
-build-covers-and-index: _build-covers-and-index format-lint
+build-data-index: .build-data-index format-lint
 
-install:
-	npm install
-
-run:
-	npm run start
-
-build-app:
+.build-app:
 	npm run build
+
+build-app: build-data-index .build-app
+
+start-dev:
+	npm run start
 
 deploy:
 	npm run deploy
