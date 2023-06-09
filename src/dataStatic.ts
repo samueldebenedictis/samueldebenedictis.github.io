@@ -4,6 +4,9 @@ export const title = "SAM";
 export const subtitle = "Sequential Access Memory";
 export const text: string[] = [];
 
+export const blackAndWhiteSwitch = false
+export const randomSwitch = true
+
 export const dependenciesData: BottomProps = {
 	items: [
 		{
