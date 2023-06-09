@@ -10,15 +10,17 @@ const dataSketch: {
 		title: string;
 	}[];
 } = { items: [] };
+const jsonPath = "./src/dataSketches.json";
 
 test.describe("Cover and index generation", () => {
 	const dir = fs.readdirSync("./public/pages");
 	dir.forEach((id) => {
 		const file = path.resolve("public/pages/", `${id}/${id}.html`);
-		console.log(file);
-		test(`Cover ${id}`, async ({ request, page }) => {
+		test(`Cover ${id}`, async ({ page }) => {
+			const canvas = page.locator("canvas");
 			await page.goto(`file:${file}`);
-			await expect(page.locator("canvas")).toBeVisible();
+			await expect(canvas).toBeVisible();
+			await canvas.hover();
 			const cover = await page.locator("canvas").screenshot();
 			fs.writeFileSync(`./public/pages/${id}/cover.png`, cover);
 			const img = `./pages/${id}/cover.png`;
@@ -28,8 +30,7 @@ test.describe("Cover and index generation", () => {
 			await page.pause();
 		});
 	});
-	test("Index", async ({ request, page }) => {
-		console.log(dataSketch);
-		fs.writeFileSync("./src/dataSketches.json", JSON.stringify(dataSketch, undefined, 2));
+	test("Index", async () => {
+		fs.writeFileSync(jsonPath, JSON.stringify(dataSketch, undefined, 2));
 	});
 });
