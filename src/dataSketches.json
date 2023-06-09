@@ -4,6 +4,11 @@
 			"img": "./pages/003/cover.png",
 			"link": "/pages/003/003.html",
 			"title": "003"
+		},
+		{
+			"img": "./pages/005/cover.png",
+			"link": "/pages/005/005.html",
+			"title": "005"
 		}
 	]
 }
