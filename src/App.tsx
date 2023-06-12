@@ -5,18 +5,20 @@ import Gallery from "./components/Gallery";
 import { dependenciesData, title, subtitle, text, randomSwitch } from "./dataStatic";
 import dataSketches from "./dataSketches.json";
 
-function randomize(items: {
-    img: string;
-    link: string;
-    title: string;
-}[]) {
-	items.sort(() => (Math.random() > 0.5 ? 1 : -1))
+function randomize(
+	items: {
+		img: string;
+		link: string;
+		title: string;
+	}[],
+) {
+	items.sort(() => (Math.random() > 0.5 ? 1 : -1));
 }
 
 function App() {
-	const galleryItems = dataSketches.items
+	const galleryItems = dataSketches.items;
 	if (randomSwitch) {
-		randomize(galleryItems)
+		randomize(galleryItems);
 	}
 	return (
 		<Container maxWidth="xl">

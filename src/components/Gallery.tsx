@@ -4,7 +4,7 @@ import Link from "@mui/material/Link";
 import { GalleryProps } from "../types";
 import { blackAndWhiteSwitch } from "../dataStatic";
 
-const blackAndWhite = blackAndWhiteSwitch ? {filter: "saturate(0)"} : {}
+const blackAndWhite = blackAndWhiteSwitch ? { filter: "saturate(0)" } : {};
 
 function Gallery(p: GalleryProps) {
 	return (
