@@ -2,7 +2,7 @@ import { BottomProps } from "./types";
 
 export const title = "SAM";
 export const subtitle = "Sequential Access Memory";
-export const text: string[] = [];
+export const text: string[] = ["Click an image to open the dynamic, full-page version."];
 
 export const blackAndWhiteSwitch = true;
 export const randomSwitch = true;
