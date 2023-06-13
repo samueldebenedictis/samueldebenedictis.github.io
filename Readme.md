@@ -3,6 +3,7 @@
 This is a boilerplate for a simple static React website compatible with GitHub Pages for collecting sketches made with [canvas-sketch](https://github.com/mattdesl/canvas-sketch).
 
 Live demo: https://samueldebenedictis.github.io/
+
 Template: https://github.com/samueldebenedictis/sketches-gallery-template
 
 ## Documentation
